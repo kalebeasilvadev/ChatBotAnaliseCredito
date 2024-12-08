@@ -10,10 +10,10 @@ from langchain_openai import ChatOpenAI
 load_dotenv()
 
 openai_api_key = os.getenv("OPENAI_API_KEY")
-openai_api_base = os.getenv("OPENAI_API_BASE")
+openai_api_base = os.getenv("OPENAI_API_BASE") or None
 
-llm = ChatOpenAI(model="meta-llama/Llama-3.2-3B-Instruct",
-                 openai_api_base=openai_api_base,
+llm = ChatOpenAI(model="gpt-3.5-turbo",
+                 openai_api_base=openai_api_base or None,
                  openai_api_key=openai_api_key,
                  temperature=0.7)
 
